@@ -1,5 +1,6 @@
 import Item from '../Item/Item';
 
+
 function ShoppingList (props){
     console.log('Shopping list props:', props);
 
@@ -17,8 +18,8 @@ function ShoppingList (props){
             <button onChange={reset}>Reset</button>
             <button onChange={clear}>Clear</button>
             <div>
-                {props.shoppingList.map(item => 
-                (<Item key={item.id} item={item} />)
+                {props.array.map(item => 
+                    (<Item key={item.id} item={item} />)
                 )} 
             </div>
         </div>
