@@ -1,5 +1,6 @@
 
 function Item(props){
+
     console.log('Shopping List item props are:', props);
     const item = props.item;
     return(
