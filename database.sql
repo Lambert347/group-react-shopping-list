@@ -9,7 +9,8 @@ CREATE TABLE "item" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR (80) NOT NULL,
 	"quantity" INTEGER NOT NULL,
-	"unit" VARCHAR (20)
+	"unit" VARCHAR (20),
+	"purchased" BOOLEAN DEFAULT FALSE
 );
 
 --test data
