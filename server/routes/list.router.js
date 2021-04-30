@@ -4,5 +4,9 @@ const pool = require('../modules/pool.js');
 
 // TODO - Add routes here...
 
+//PUT
+
+//DELETE
+
 
 module.exports = router;
