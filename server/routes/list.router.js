@@ -1,23 +1,23 @@
 const express = require('express');
-const router = express.Router();
+const listRouter = express.Router();
 const pool = require('../modules/pool.js');
 
 
 // TODO - Add routes here...
-router.get('/'), (req, res) => {
+listRouter.get('/', (req, res) => {
     const sqlText= `SELECT * FROM "item" ORDER BY "id";`;
     pool.query(sqlText)
-        .then((results) => {
+        .then((result) => {
             console.log('Get stuff back from the database', result);
-            res.send(result.row);
+            res.send(result.rows);
         })
-        .catch((errpr) => {
+        .catch((error) => {
             console.log('Error with getting from database', error);
             res.sendStatus(500);
         })
-}
+})
 
-router.post('/', (req, res) => {
+listRouter.post('/', (req, res) => {
     const item = req.body;
     const sqlText = `Insert INTO "item" (name, quantity, unit, purchased)
                     VALUES ($1, $2, $3, $4)`;
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
         })
 })
 //PUT
-router.put('/:id', (req, res) => {
+listRouter.put('/:id', (req, res) => {
     let itemId = req.params.id;
     console.log(req.body)
     console.log(req.params.id);
@@ -46,7 +46,7 @@ router.put('/:id', (req, res) => {
     })
 })
 //DELETE
-router.delete('/:id', (req,res) =>{
+listRouter.delete('/:id', (req,res) =>{
     deleteItem = req.params.id;
     console.log('in/item<id> DELETE', deleteItem);
     let queryString = `DELETE FROM item WHERE id=$1;`
@@ -59,4 +59,4 @@ router.delete('/:id', (req,res) =>{
     })
 })
 
-module.exports = router;
+module.exports = listRouter;

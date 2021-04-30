@@ -19,6 +19,7 @@ function ShoppingForm(props){
                 quantity: newShoppingQuantity,
                 unit: newShoppingUnit,
             }
+            })
             .then((response) => {
                 console.log(response);
                 //might need to addressed earlier
@@ -31,7 +32,6 @@ function ShoppingForm(props){
             .catch(function(error) {
                 console.log('Error on add:', error);
             })
-        })
     }
     return (
         <>

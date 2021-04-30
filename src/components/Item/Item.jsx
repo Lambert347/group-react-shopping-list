@@ -15,8 +15,8 @@ function Item(props){
 
 export default Item;
 
-console.log("Creature item Props are:", props);
-    const creature = props.creature;
-    return(
-      <li > {creature.name} is from {creature.origin}.</li>
-    )
+// console.log("Item Props are:", props);
+//     const creature = props.creature;
+//     return(
+//       <li > {creature.name} is from {creature.origin}.</li>
+//     )
