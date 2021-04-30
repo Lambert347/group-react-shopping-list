@@ -15,7 +15,7 @@ function ShoppingForm(props){
             url: '/item',
             //
             data: {
-                item: newShoppingItem,
+                name: newShoppingItem,
                 quantity: newShoppingQuantity,
                 unit: newShoppingUnit,
             }
