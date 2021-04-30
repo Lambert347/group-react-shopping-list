@@ -30,5 +30,8 @@ router.post('/', (req, res) => {
             console.log('Error with making post request', error);
         })
 })
+//PUT
+
+//DELETE
 
 module.exports = router;
